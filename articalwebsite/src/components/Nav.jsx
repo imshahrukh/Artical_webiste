@@ -15,7 +15,7 @@ function Nav(props) {
           <span className="icon-bar" />
           <span className="icon-bar" />
         </button>
-        <a className="navbar-brand" href="index.html">
+        <a className="navbar-brand" href="/">
           Write_IT
         </a>
       </div>

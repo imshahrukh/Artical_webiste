@@ -48,6 +48,16 @@ function ArticalCard({ cardColor, el, page, id }) {
               />
             </p> */}
             <p>{el.description}. </p>
+            <a
+              style={{
+                padding: "1rem",
+                backgroundColor: "red",
+                color: "white",
+              }}
+              href="https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript"
+            >
+              Vist Website
+            </a>
             {page === "artical" ? (
               ""
             ) : (

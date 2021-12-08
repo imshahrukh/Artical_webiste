@@ -128,7 +128,7 @@ function AddArtical(props) {
                   setPara(e.target.value);
                 }}
               />
-              <br />
+              {/* <br />
               <input
                 type="file"
                 value=""
@@ -136,7 +136,7 @@ function AddArtical(props) {
                   console.log(e.target.files[0]);
                   uploadImage(e.target.files[0]);
                 }}
-              />
+              /> */}
               <br />
               <p>{image}</p>
               <button
