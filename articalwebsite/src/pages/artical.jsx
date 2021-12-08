@@ -3,6 +3,8 @@ import ArticalCard from "../components/articalCard";
 import Footer from "../components/footer";
 import Nav from "../components/Nav";
 import { API } from "./../api";
+import { dummyData } from "./staticArticals";
+
 // import { useParams } from "react-router-dom";
 function Artical(props) {
   // let params = useParams();
@@ -10,10 +12,15 @@ function Artical(props) {
   const search = window.location.search;
   const params = new URLSearchParams(search);
   const foo = params.get("id");
-  const getArtaicls = async () => {
-    const data = await API.getArticalByID(foo);
 
-    setArtical(data);
+  const getArtaicls = async () => {
+    if (foo.length < 4) {
+      const data = dummyData.filter((el) => el._id === foo);
+      setArtical(data);
+    } else {
+      const data = await API.getArticalByID(foo);
+      setArtical(data);
+    }
   };
   useEffect(() => {
     getArtaicls();

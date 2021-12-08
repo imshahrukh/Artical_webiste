@@ -12,6 +12,7 @@ function AddArtical(props) {
   const [usId, setUSId] = useState("");
   const [message, setMessage] = useState("");
   const [readTime, setReadTime] = useState("");
+  const [url, setUrl] = useState("");
   const addUserData = async (object) => {
     const data = await API.addUser(object);
     return data;
@@ -49,6 +50,7 @@ function AddArtical(props) {
         userId: userID,
         readTime: readTime,
         description: para,
+        url: url,
       };
       const artical = await API.addPost(data);
       if (artical === "success") {
@@ -115,6 +117,18 @@ function AddArtical(props) {
                   placeholder="How much time it take of reader"
                   onChange={(e) => {
                     setReadTime(e.target.value);
+                  }}
+                />
+                <br />
+              </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="subjectEmail1"
+                  placeholder="Add Url"
+                  onChange={(e) => {
+                    setUrl(e.target.value);
                   }}
                 />
                 <br />

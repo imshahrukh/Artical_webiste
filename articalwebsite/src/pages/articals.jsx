@@ -3,7 +3,7 @@ import ArticalCard from "../components/articalCard";
 import Footer from "../components/footer";
 import Nav from "../components/Nav";
 import { API } from "./../api";
-
+import { dummyData } from "./staticArticals";
 function Articals(props) {
   const [articals, setArticals] = useState([]);
   const getArtaicls = async () => {
@@ -14,12 +14,21 @@ function Articals(props) {
   useEffect(() => {
     getArtaicls();
   }, []);
+
   return (
     <div>
       {/* Static navbar */}
       <div className="navbar navbar-inverse navbar-static-top">
         <Nav />
       </div>
+      {dummyData &&
+        dummyData.map((el, key) =>
+          key % 2 === 0 ? (
+            <ArticalCard cardColor="grey" el={el} page="articals" />
+          ) : (
+            <ArticalCard cardColor="white" el={el} page="articals" />
+          )
+        )}
       {articals &&
         articals.map((el, key) =>
           key % 2 === 0 ? (

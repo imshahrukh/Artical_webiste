@@ -28,7 +28,7 @@ function ArticalCard({ cardColor, el, page, id }) {
             <h4>{el.title}</h4>
 
             {/* an Image */}
-            {el.image === "" ? (
+            {/* {el.image === "" ? (
               ""
             ) : (
               <p>
@@ -39,7 +39,7 @@ function ArticalCard({ cardColor, el, page, id }) {
                   alt=""
                 />
               </p>
-            )}
+            )} */}
             {/* <p>
               <img
                 className="img-responsive"
@@ -51,18 +51,18 @@ function ArticalCard({ cardColor, el, page, id }) {
             <a
               style={{
                 padding: "1rem",
-                backgroundColor: "red",
-                color: "white",
+                // backgroundColor: "red",
+                // color: "white",
               }}
-              href="https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript"
+              href={el.url}
             >
-              Vist Website
+              Visit Link
             </a>
             {page === "artical" ? (
               ""
             ) : (
               <p>
-                <Link to={`/artical?id=${el._id}`}>Continue Rreading</Link>
+                <Link to={`/artical?id=${el._id}`}>Continue Reading</Link>
                 {/* <a href="blog01.html">Continue Reading...</a> */}
               </p>
             )}
@@ -79,7 +79,7 @@ function ArticalCard({ cardColor, el, page, id }) {
                 delPost();
               }}
             >
-              Delte Post
+              Delete Post
             </button>
           )}
         </div>
